@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleCortes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@1&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/logoTitulo.png">
+    <title>Cortes</title>
+</head>
+<body>
+    <!--Modal inicio-->
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th>Foto Corte</th>
+                    <th>Detalle</th>
+                    <th>Tipo Rostro</th>
+                    <th>Tamaño cabello</th>
+                    <th>Tipo cabello</th>
+                    <th>Categoria</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Modal Fin-->
+
+
+      <!-- Modal Carrito-->
+      <div class="modal fade" id="exampleModalHiring" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table id="deleteListCards" class="table table-dark">
+                <thead>
+                  <tr>
+                    <th>Foto Corte</th>
+                    <th>Nombre</th>
+                    <th>Detalle</th>
+                    <th>Borrar</th>
+                  </tr>
+                </thead>
+                <tbody id="hiring">
+
+                </tbody>
+              </table>
+<!--               <div>
+                Precio total: <h5 class="precioTotal"></h5>
+              </div> -->
+              <a href="" id="cleanCart" class="btn btn-danger">Limpiar Carrito</a>
+              <!-- <button id="eliminarTodo" class="btn btn-danger">Eliminar Todos</button> -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button id="contratar" type="button" class="btn btn-primary">Apartar Cita</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <section class="hero">
+        <div class="efecto">
+            <header>
+                <img class="logo" src="img/logo.png" alt="">
+                <nav class="menu">
+                    <a href="index.html">INICIO</a>
+                    <a href="cortes.html">CORTES</a>
+                    <a href="barberia.html">BARBERIAS</a>
+                    <a href="#contacto">CONTACTO</a>
+                    <button id="accederBoton" type="button" class="accederBoton"><a href="acceder.html">ACCEDER</a></button>
+                </nav>
+            </header>
+            <div class="hero-contain">
+                <section class="encabezado">
+                    <div class="container">
+                        <h2>Encuentra tu estilo</h2>
+                        <input id="inputNombre" type="text" placeholder="Ingrese el nombre de el corte">
+                        <form class="filtro">
+                            <select id="nombre" class="select-css">
+                                <option value="">Seleccione Nombre</option>
+                            </select>
+                            <select id="categoria" class="select-css">
+                                <option value="">Selecione Categoria</option>
+                                <option value="barba">Barba</option>
+                                <option value="cabello">Cabello</option>
+                                <option value="cejas">Cejas</option>
+                            </select>
+                            <select id="tipoCabello" class="select-css">
+                                <option value="">Tipo Cabello</option>
+                                <option value="ondulado">Ondulado</option>
+                                <option value="lacio">Lacio</option>
+                                <option value="rizado">Rizado</option>
+                                <option value="crespo">Crespo</option>
+                            </select>
+                            <select id="tamaño" class="select-css">
+                                <option id="tamañoCabello" value="">Tamaño Cabello</option>
+                                <option value="corto">Corto</option>
+                                <option value="mediano">Mediano</option>
+                                <option value="largo">Largo</option>
+                            </select>
+                            <select id="tipoRostro" class="select-css">
+                                <option value="">Tipo de Rostro</option>
+                                <option value="diamante">Diamante</option>
+                                <option value="ovalado">Ovalado</option>
+                                <option value="cuadrado">Cuadrado</option>
+                                <option value="redondo">Redondo</option>
+                                <option value="trapecio">Trapecio</option>
+                                <option value="corazon">Corazon</option>
+                                <option value="rectangular">Rectangular</option>
+                            </select>
+                        </form>
+                    </div>
+                </section>
+                    <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btnCarrito" data-bs-toggle="modal" data-bs-target="#exampleModalHiring">
+                  Carrito
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="contenedor">
+        <!-- Parent Principal para los resultados de los filtros -->
+        <div class="tarjetas" id="tarjetas">
+
+        </div>
+      </div>
+
+    <section class="contacto" id="contacto">
+        <section class="menu-contact">
+            <ul>
+                <li>
+                    <div class="title-contact">Menu Links</div>
+                    <hr>
+                    <div>Inicio</div>
+                    <div>Cortes</div>
+                    <div>Barberias</div>
+                    <div>Acceder</div>
+                </li>
+            </ul>
+        </section>
+        <section class="menu-contact">
+            <ul>
+                <li>
+                    <div class="title-contact">Otros Servicios</div>
+                    <hr>
+                    <div>Asesoriamientos de cortes segun rostro</div>
+                    <div>Barberias cercanas a tu localidad</div>
+                    <div>Cortes en tendencia actual</div>
+                    <div>Cortes de cabello</div>
+                    <div>diseño de barbas</div>
+                </li>
+            </ul>
+        </section>
+        <section class="menu-contact">
+            <ul>
+                <li>
+                    <div class="title-contact">Informacion</div>
+                    <hr>
+                    <div>Bucaramanga-Santander<br>calle 47-12</div>
+                    <div>Medellin-Antioquia<br>cra 7 calle 23-45</div>
+                    <div>Bogota-Cundinamarca<br>calle 12#13-23</div>
+                </li>
+            </ul>
+        </section>
+        <section class="menu-contact">
+            <ul>
+                <li>
+                    <div class="title-contact">Contacto</div>
+                    <hr>
+                    <div class="redes">
+                        <img src="img/email.png" alt="">
+                        <div>correo@gmail.com</div>
+                    </div>
+                    <div class="redes">
+                        <img src="img/facebook.png" alt="">
+                        <div>www.facebook.com</div>
+                    </div>
+                    <div class="redes">
+                        <img src="img/instagram.png" alt="">
+                        <div>www.instagram.com</div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </section>
+    <footer>
+        ©2023 Derechos reservados.
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+    <script src="js/db.js"></script>
+    <script src="js/cortes.js"></script>
+</body>
+
+</html>

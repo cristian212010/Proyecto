@@ -1,0 +1,260 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    background-color: #131313 ;
+
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 1.5rem 7rem;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.logo{
+    width: 22rem;
+    height: auto;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 3rem;
+}
+
+.menu a{
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: white;
+}
+
+.acceder{
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: solid 1px white;
+    color: white;
+    transition: all 0.5s;
+}
+
+.acceder:hover{
+    background-color: white;
+    color: #2b2b2b;
+}
+
+.hero{
+    background-image: url(/img/fondo2.jpg);
+    background-repeat:no-repeat ;
+    background-size: cover ;
+    /* background-position: center; */
+    height: 40.2rem;
+    position: relative;
+}
+
+.efecto{
+    background-color: rgb(0, 0, 0, 65%);
+}
+
+.container{
+    background-color: black ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin:  4rem auto;
+    height: 25rem;
+    color: white;
+    font-size: 2.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 16px 14px 20px black;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../img/fondo.jpg) ;
+    font-weight: bold;
+
+}
+
+
+
+
+
+.servicios{
+    border: 3px solid white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.titulo{
+    display: flex;
+    background-color: whitesmoke;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+}
+
+.grande{
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+    height: auto;
+}
+
+
+.imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    font-size: 1.6rem;
+}
+
+.grande img{
+    width: 60rem;
+}
+
+.horario{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    border: 1px solid white;
+    border-radius: 1rem;
+    width: 30rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.grande2{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3rem;
+    height: auto;
+}
+
+
+.empleadosC{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    font-size: 1.6rem;
+    border-bottom: 2px solid white;
+}
+
+.empleadosC:hover{
+    transform: scale(1.05);
+}
+
+
+
+.empleados{
+    width: 30rem;
+    height: 40rem;
+}
+
+.titulo2{
+    display: flex;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: whitesmoke;
+}
+
+.lugar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    gap: 2rem;
+    width: 80%;
+    margin: 3rem auto;
+}
+
+.lugar img{
+    width: 80rem;
+}
+
+.contacto{
+    padding: 2rem;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 8rem;
+    margin: 0;
+}
+
+footer{
+    margin: 0;
+    background-color: #131313;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.4rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.redes{
+    display: flex;
+    gap: 1rem;
+}
+
+.redes img{
+    width: auto;
+    height: 5rem;
+}
+
+.ubicacion{
+    border: 3px  solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 auto;
+    padding: 1rem;
+    height: auto;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    transition: all 0.5s;
+
+}
+
+.ubicacion:hover{
+    background-color: white;
+    color: black;
+}
+
+iframe {
+    border: 1px solid black;
+    width: 100%; /* takes precedence over the width set with the HTML width attribute */
+    height: 50rem;
+}
