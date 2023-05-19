@@ -58,12 +58,6 @@ inputNombre.addEventListener('input', (e)=>{
     parametros.titulo = e.target.value
     filtrarCorte();
 })
-/* const año = document.querySelector('#año')
-año.addEventListener('input', (e)=>{
-    parametros.año = e.target.value;
-    filtrarCorte()
-})  */
-
 
 function filtrarCorte() {
     const resultado = cortes
@@ -134,19 +128,13 @@ function limpiar(){
 
 document.addEventListener('DOMContentLoaded', ()=>{
     showCortes(cortes);
-    selectCamper();
+    selectCorte();
 })
 
-/* 4. Funcion para inyectar dinamicamente html */
 
 function showCortes(cortes){
-    //Selecciono el elemento html parent que contendra mis cards
     const contenedorTarjetas = document.querySelector('#tarjetas');
-
-    //Limpiar
     limpiar()
-
-    //html para cada camper
     cortes.forEach((corte)=>{
         const corteHTML = document.createElement('p');
         
@@ -158,7 +146,7 @@ function showCortes(cortes){
             <img src="${img}" class="card-img-top" alt="..." id="imgCard">
         <div class="card-body">
           <h5 class="card-title ">${titulo}</h5>
-          <p class="card-text">Precio: ${precio}</p>
+          <h6 class="card-text">Precio: ${precio}</h6>
         </div>
             <ul class="list-group list-group-flush">
             <p class="list-group-item">${detalle}</p>
@@ -174,9 +162,9 @@ function showCortes(cortes){
 
 const tbody = document.querySelector('tbody')
 const rowModal = document.createElement('tr')
-function selectCamper(){
-    const camperDetails = document.querySelector("#tarjetas")
-    camperDetails.addEventListener("click", loadDetail);
+function selectCorte(){
+    const corteDetails = document.querySelector("#tarjetas")
+    corteDetails.addEventListener("click", loadDetail);
 }
 function loadDetail(e){
     const nombre = e.target.getAttribute('nombre')
@@ -209,6 +197,7 @@ function loadDetail(e){
     </td>
     `;
     tbody.appendChild(rowModal)
+
 }
 
 
@@ -226,24 +215,24 @@ cleanCart.addEventListener("click", trashCart)
 function selectCards(e) {
     e.preventDefault();
     if (e.target.classList.contains("boton")) {
-        const selectedCamper = e.target.parentElement.parentElement;
-        console.log(selectedCamper);
-        detail(selectedCamper)
+        const selectedCorte = e.target.parentElement.parentElement;
+        console.log(selectedCorte);
+        detail(selectedCorte)
     }
 }
 
-function detail(selectCamper) {
-    const camperDetail = {
-        imagen: selectCamper.querySelector("img").src,
-        nombre: selectCamper.querySelector("h5").textContent,
-        detalle: selectCamper.querySelector("p").textContent,
-        precio: selectCamper.querySelector('.boton').getAttribute('precio'),
-        id: selectCamper.querySelector(".boton").getAttribute("id")
+function detail(selectCorte) {
+    const corteDetail = {
+        imagen: selectCorte.querySelector("img").src,
+        nombre: selectCorte.querySelector("h5").textContent,
+        detalle: selectCorte.querySelector("p").textContent,
+        precio: selectCorte.querySelector('.boton').getAttribute('precio'),
+        id: selectCorte.querySelector(".boton").getAttribute("id")
     }
-    console.log(camperDetail);
-    arrayCards=[...arrayCards,camperDetail]
+    console.log(corteDetail);
+    arrayCards=[...arrayCards,corteDetail]
     console.log(arrayCards);
-    injectingCampersHtml();
+    injectingCortesHtml();
 }
 
 function deleteCards(e) {
@@ -251,14 +240,14 @@ function deleteCards(e) {
         const cardToDelete = e.target.getAttribute("id")
         console.log(cardToDelete);
         arrayCards=arrayCards.filter((cd)=>cd.id !==cardToDelete)
-        injectingCampersHtml();
+        injectingCortesHtml();
     }
 }
-let total=0
-function injectingCampersHtml() {
+
+function injectingCortesHtml() {
     cleanHtml();
     arrayCards.forEach((arrayCard)=>{
-        const {imagen,nombre,detalle,id} = arrayCard
+        const {imagen,nombre,detalle,id, precio} = arrayCard
 
         const row = document.createElement("tr")
         row.innerHTML=`
@@ -272,12 +261,24 @@ function injectingCampersHtml() {
             ${detalle}
         </td>
         <td>
+            ${precio}
+        </td>
+        <td>
             <a id="${id}" class="deleteCard btn btn-danger eliminador">X</a>
         </td>
         `
         tbodie.appendChild(row)
     })
+    addStorage();
 }
+function addStorage() {
+    localStorage.setItem('jobCart', JSON.stringify(arrayCards))
+}
+//localstorage DOM Contentloaded
+document.addEventListener('DOMContentLoaded', ()=>{
+    arrayCards = JSON.parse(localStorage.getItem('jobCart')) || [];
+    injectingCortesHtml();
+})
 
 function trashCart() {
     arrayCards=[];

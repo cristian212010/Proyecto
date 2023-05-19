@@ -190,7 +190,7 @@ span{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    gap: 8rem;
+    gap: 3rem;
     margin: 0;
 }
 
@@ -279,4 +279,10 @@ footer{
 .redes img{
     width: auto;
     height: 5rem;
+}
+
+iframe {
+    border: 1px solid black;
+    width: 38rem; /* takes precedence over the width set with the HTML width attribute */
+    height: 30rem;
 }

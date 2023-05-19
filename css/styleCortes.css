@@ -330,3 +330,9 @@ footer{
     border-radius: 1rem;
     padding: 1rem;
 }
+
+iframe {
+    border: 1px solid black;
+    width: 38rem; /* takes precedence over the width set with the HTML width attribute */
+    height: 30rem;
+}

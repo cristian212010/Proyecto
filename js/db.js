@@ -65,7 +65,7 @@ const cortes = [
         tamaño: "largo",
         tipoRostro: "diamante",
         categoria: "cabello",
-        tipocabello:"ondulado",
+        tipocabello:"lacio",
         precio:"10.000",
         año:"",
         detalle: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem sed nostrum officia! Commodi nemo doloribus reprehenderit veniam molestias."
